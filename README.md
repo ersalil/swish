@@ -36,5 +36,8 @@ This tool is modified and advance version of wishfish, where you will get the we
 
 Special Thanks to WishFish.
 
-
+<h1>Donate</h1>
+  <h5>Bitcoin Address</h5>:1JppsmFvpB71KvSfGwC6vCjHSJD5GNYR61
+  <h5>PAYTM</h5>: +91 9887998853   
+  
                                             Inspired By github.com/thelinuxchoice
