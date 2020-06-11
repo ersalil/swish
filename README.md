@@ -32,7 +32,7 @@ $ bash wishfish.sh
 </h4>
 This information is only for educationla purpose and we are not responsible for any kind of illegal activity done by this tool.
 
-This tool is modified and advance version of wishfish, where you will get the web page created on google search engine.
+This tool is modified and advance version of wishfish, where you will get the web page created on google search engine and more secure tor network.
 
 Special Thanks to WishFish.
 
