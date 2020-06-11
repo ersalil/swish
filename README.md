@@ -11,7 +11,11 @@ $ apt install wget
 
 $ apt install openssh
 
+$ service tor start
+
 $ git clone https://github.com/agrawalsalil/swish.git
+
+<h5>NOTE: If the above commands doesn't work, then try to run sudo before all commands.</h5>
 
 <h3>Usage</h3>
 
