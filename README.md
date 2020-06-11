@@ -11,7 +11,7 @@ $ apt install wget
 
 $ apt install openssh
 
-$ git clone https://github.com/kinghacker0/WishFish
+$ git clone https://github.com/agrawalsalil/swish.git
 
 <h3>Usage</h3>
 
@@ -27,6 +27,10 @@ $ bash wishfish.sh
 <h4>Note :- If victim open this url in chrome or android inbuilt browser then it can access victim camera by allowing permissions and send snap to you.
 </h4>
 This information is only for educationla purpose and we are not responsible for any kind of illegal activity done by this tool.
+
+This tool is modified and advance version of wishfish, where you will get the web page created on google search engine.
+
+Special Thanks to WishFish.
 
 
                                             Inspired By github.com/thelinuxchoice
